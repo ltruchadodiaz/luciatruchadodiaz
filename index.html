@@ -1,1 +1,438 @@
-paginal web fea de lucia
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Perfil profesional de Lucía Truchado Díaz, graduada en Economía y Estudios Internacionales y estudiante de Data Science, Big Data & Business Analytics.">
+	<title>Lucía Truchado Díaz | Economía, datos y perspectiva global</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #fbfaf7;
+			--sand: #eee9df;
+			--ink: #272923;
+			--muted: #686a60;
+			--olive: #69745a;
+			--line: #dedbd2;
+			--serif: Georgia, "Times New Roman", serif;
+			--sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: var(--sans);
+			line-height: 1.65;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		.page-shell {
+			width: min(1120px, calc(100% - 64px));
+			margin: 0 auto;
+		}
+
+		.site-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 88px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.wordmark {
+			color: var(--olive);
+			font-family: var(--serif);
+			font-size: 23px;
+			text-decoration: none;
+		}
+
+		.site-nav {
+			display: flex;
+			gap: 32px;
+		}
+
+		.site-nav a {
+			color: var(--muted);
+			font-size: 13px;
+			text-decoration: none;
+			transition: color 180ms ease;
+		}
+
+		.site-nav a:hover,
+		.site-nav a:focus-visible {
+			color: var(--olive);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1.45fr) minmax(230px, 0.55fr);
+			gap: 64px;
+			align-items: center;
+			min-height: 490px;
+			padding: 76px 0 84px;
+		}
+
+		.eyebrow {
+			margin: 0 0 22px;
+			color: var(--olive);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+		}
+
+		h1,
+		h2,
+		h3,
+		p {
+			margin-top: 0;
+		}
+
+		h1 {
+			max-width: 720px;
+			margin-bottom: 24px;
+			font-family: var(--serif);
+			font-size: clamp(42px, 6vw, 70px);
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 1.08;
+		}
+
+		.hero-copy {
+			max-width: 620px;
+			margin-bottom: 30px;
+			color: var(--muted);
+			font-size: 16px;
+		}
+
+		.hero-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			color: var(--ink);
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.hero-link::after {
+			content: "↓";
+			color: var(--olive);
+			font-size: 18px;
+			transition: transform 180ms ease;
+		}
+
+		.hero-link:hover::after {
+			transform: translateY(3px);
+		}
+
+		.hero-note {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			min-height: 276px;
+			padding: 28px;
+			overflow: hidden;
+			background-color: var(--sand);
+			background-image: radial-gradient(#c8c2b5 0.7px, transparent 0.7px);
+			background-size: 13px 13px;
+		}
+
+		.hero-note::before {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(135deg, rgba(251, 250, 247, 0.88), rgba(238, 233, 223, 0.5));
+			content: "";
+		}
+
+		.hero-note > * {
+			position: relative;
+		}
+
+		.note-index {
+			align-self: flex-end;
+			color: var(--olive);
+			font-family: var(--serif);
+			font-size: 58px;
+			line-height: 1;
+		}
+
+		.note-label {
+			max-width: 175px;
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 23px;
+			line-height: 1.25;
+		}
+
+		.section {
+			padding: 68px 0;
+			border-top: 1px solid var(--line);
+		}
+
+		.section-heading {
+			display: grid;
+			grid-template-columns: 180px 1fr;
+			gap: 32px;
+			margin-bottom: 36px;
+		}
+
+		.section-heading .eyebrow {
+			margin: 8px 0 0;
+		}
+
+		h2 {
+			margin-bottom: 0;
+			font-family: var(--serif);
+			font-size: 36px;
+			font-weight: 400;
+			line-height: 1.2;
+		}
+
+		.education-list {
+			margin-left: 212px;
+			border-top: 1px solid var(--line);
+		}
+
+		.education-item {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 20px;
+			align-items: center;
+			padding: 23px 0;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.education-item h3 {
+			margin-bottom: 4px;
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		.education-item p {
+			margin-bottom: 0;
+			color: var(--muted);
+			font-size: 13px;
+		}
+
+		.status {
+			padding: 6px 11px;
+			background: #eeeee7;
+			color: var(--olive);
+			font-size: 11px;
+			font-weight: 600;
+			white-space: nowrap;
+		}
+
+		.profile-copy {
+			margin-left: 212px;
+		}
+
+		.focus-section {
+			display: grid;
+			grid-template-columns: 180px 1fr;
+			gap: 32px;
+			padding-bottom: 82px;
+		}
+
+		.focus-section .eyebrow {
+			margin: 8px 0 0;
+		}
+
+		.focus-copy {
+			max-width: 690px;
+			color: var(--muted);
+			font-size: 15px;
+		}
+
+		.focus-copy p:last-child {
+			margin-bottom: 0;
+		}
+
+		.site-footer {
+			padding: 22px 0;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: 12px;
+		}
+
+		@media (max-width: 700px) {
+			.page-shell {
+				width: min(100% - 40px, 560px);
+			}
+
+			.site-header {
+				min-height: 72px;
+			}
+
+			.site-nav {
+				gap: 17px;
+			}
+
+			.site-nav a {
+				font-size: 12px;
+			}
+
+			.hero {
+				grid-template-columns: 1fr;
+				gap: 36px;
+				min-height: auto;
+				padding: 62px 0;
+			}
+
+			.hero-note {
+				min-height: 190px;
+			}
+
+			.section,
+			.focus-section {
+				padding: 52px 0;
+			}
+
+			.section-heading,
+			.focus-section {
+				grid-template-columns: 1fr;
+				gap: 16px;
+			}
+
+			.section-heading {
+				margin-bottom: 26px;
+			}
+
+			.education-list,
+			.profile-copy {
+				margin-left: 0;
+			}
+
+			h2 {
+				font-size: 31px;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.page-shell {
+				width: calc(100% - 32px);
+			}
+
+			.wordmark {
+				font-size: 20px;
+			}
+
+			.site-nav {
+				gap: 12px;
+			}
+
+			.site-nav a {
+				font-size: 11px;
+			}
+
+			.education-item {
+				grid-template-columns: 1fr;
+				gap: 10px;
+			}
+
+			.status {
+				justify-self: start;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html {
+				scroll-behavior: auto;
+			}
+
+			*,
+			*::before,
+			*::after {
+				transition-duration: 0.01ms !important;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page-shell">
+		<header class="site-header">
+			<a class="wordmark" href="#inicio" aria-label="Lucía Truchado Díaz, inicio">LT.</a>
+			<nav class="site-nav" aria-label="Navegación principal">
+				<a href="#perfil">Perfil</a>
+				<a href="#formacion">Formación</a>
+				<a href="#enfoque">Enfoque</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero" id="inicio" aria-labelledby="main-title">
+				<div>
+					<p class="eyebrow">Economía · Estudios Internacionales · Data Science</p>
+					<h1 id="main-title">Una mirada global, guiada por los datos.</h1>
+					<p class="hero-copy">Soy Lucía Truchado Díaz, graduada en Economía y Estudios Internacionales y estudiante del máster en Data Science, Big Data &amp; Business Analytics. Me interesa conectar el análisis económico y la perspectiva internacional con herramientas de datos para comprender mejor los retos actuales y apoyar decisiones fundamentadas.</p>
+					<a class="hero-link" href="#perfil">Conoce mi perfil</a>
+				</div>
+				<aside class="hero-note" aria-label="Áreas de formación">
+					<span class="note-index" aria-hidden="true">01</span>
+					<p class="note-label">Economía, contexto y evidencia.</p>
+				</aside>
+			</section>
+
+			<section class="section" id="perfil" aria-labelledby="profile-title">
+				<div class="section-heading">
+					<p class="eyebrow">01 / Perfil</p>
+					<h2 id="profile-title">Un perfil entre disciplinas.</h2>
+				</div>
+				<div class="focus-copy profile-copy">
+					<p>Mi formación combina el estudio de los mercados y la economía con una comprensión amplia de las relaciones internacionales. Actualmente amplío esa base con ciencia de datos, Big Data y analítica de negocio.</p>
+					<p>Busco aportar una perspectiva rigurosa y curiosa: entender el contexto, trabajar con la información disponible y traducir el análisis en conocimiento útil.</p>
+				</div>
+			</section>
+
+			<section class="section" id="formacion" aria-labelledby="education-title">
+				<div class="section-heading">
+					<p class="eyebrow">02 / Formación</p>
+					<h2 id="education-title">Una base amplia, una nueva especialización.</h2>
+				</div>
+				<div class="education-list">
+					<article class="education-item">
+						<div>
+							<h3>Máster en Data Science, Big Data &amp; Business Analytics</h3>
+							<p>Formación actual</p>
+						</div>
+						<span class="status">En curso</span>
+					</article>
+					<article class="education-item">
+						<div>
+							<h3>Grado en Economía y Estudios Internacionales</h3>
+							<p>Formación universitaria</p>
+						</div>
+						<span class="status">Graduada</span>
+					</article>
+				</div>
+			</section>
+
+			<section class="section focus-section" id="enfoque" aria-labelledby="focus-title">
+				<p class="eyebrow">03 / Enfoque</p>
+				<div class="focus-copy">
+					<h2 id="focus-title">Contexto para interpretar. Datos para profundizar.</h2>
+					<p>Me motiva explorar cómo la analítica puede complementar la mirada económica e internacional: formular mejores preguntas, detectar patrones y comunicar conclusiones con claridad.</p>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<p>Lucía Truchado Díaz · Economía, perspectiva global y datos</p>
+		</footer>
+	</div>
+</body>
+</html>
